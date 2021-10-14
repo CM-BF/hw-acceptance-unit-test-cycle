@@ -1,7 +1,11 @@
 RSpec.configure do |config|
 
   config.before(:suite) do
-      print 'clean database'
+    #   print 'clean database'
+    DatabaseCleaner.clean_with(:truncation)
+  end
+  
+  config.after(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end
 
