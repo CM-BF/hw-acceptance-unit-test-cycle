@@ -12,4 +12,8 @@ class Movie < ActiveRecord::Base
     def self.with_ratings(chosen_ratings)
         Movie.where(rating: chosen_ratings.upcase)
     end
+    
+    def self.with_director(director)
+        Movie.where(:director => director)
+    end
 end

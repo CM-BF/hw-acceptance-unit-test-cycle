@@ -27,3 +27,9 @@ Then /I should see all the movies/ do
     step %{I should see "#{movie.title}"}
   end
 end
+
+Then /^the (.+) of "(.+)" should be "(.+)"/ do |field, movie_name, value|
+  movie = Movie.find_by(title: movie_name).send("#{field}").should == value
+  # visit movie_path(movie)
+  # page.body.should =~ /#{field}:.*#{value}/mi
+end
