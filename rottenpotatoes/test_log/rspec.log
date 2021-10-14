@@ -1,0 +1,16 @@
+
+MoviesController
+  when the specified movie has a director
+    should call Movie.with_director
+  when the specified movie has no director
+    should redirect to index page
+
+Movie
+  with a given director
+    should return the correct matches for movies by the same director
+    should not return matches of movies by different directors
+
+Finished in 0.14096 seconds (files took 1.59 seconds to load)
+4 examples, 0 failures
+
+Coverage report generated for RSpec to /home/ubuntu/environment/hw-acceptance-unit-test-cycle/rottenpotatoes/coverage. 36 / 83 LOC (43.37%) covered.
